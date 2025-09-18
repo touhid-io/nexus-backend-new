@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_product_gallery_images",
+  "info": {
+    "displayName": "GalleryImage"
+  },
+  "options": {},
+  "attributes": {
+    "gallary_image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

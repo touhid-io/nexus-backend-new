@@ -1,6 +1,7 @@
-import path from 'path';
+// config/database.js
+const path = require('path');
 
-export default ({ env }) => {
+module.exports = ({ env }) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
 
   const connections = {
@@ -22,6 +23,7 @@ export default ({ env }) => {
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
+
     postgres: {
       connection: {
         connectionString: env('DATABASE_URL'),
@@ -42,6 +44,7 @@ export default ({ env }) => {
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
+
     sqlite: {
       connection: {
         filename: path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
